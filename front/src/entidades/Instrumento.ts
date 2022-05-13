@@ -1,13 +1,15 @@
-export default class Instrumento{
+class Instrumento{
 
-    id:number = 0;
-    nombre: string = "";
-    marca: string = "";
-    modelo: string = "";
-    imagen: string = "";
-    precio: number = 0;
-    costoEnvio: string = "";
-    cantidadVendida: number = 0;
-    descripcion: string = "";
+    id!:number;
+    nombre!: string;
+    marca!: string;
+    modelo!: string;
+    imagen!: string;
+    precio!: number;
+    costoEnvio!: string;
+    cantidadVendida!: number;
+    descripcion!: string;
 
 }
+
+export default Instrumento
