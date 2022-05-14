@@ -25,6 +25,19 @@ router.get('/busqueda/:nombre', async (req, res) => {
     res.json(instrumento);
 });
 
+router.get('/precios/query', async (req, res) => {
+    const min = req.query.min;
+    const max = req.query.max;
+    const instrumento = await Instrumento.findAll({
+        where: {
+            precio: {
+                [Op.between]: [min, max]
+            }
+        }
+    });
+    res.json(instrumento);
+});
+
 router.post('/', async (req, res) => {
     const instrumento = await Instrumento.create(req.body);
     res.json(instrumento);
